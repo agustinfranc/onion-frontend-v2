@@ -15,7 +15,6 @@
   .v-toolbar__extension {
     padding-left: 0 !important;
     padding-right: 0 !important;
-
     display: none;
 
     .v-card {
@@ -66,27 +65,6 @@
   -webkit-line-clamp: 3 !important;
 }
 
-.flickity-viewport {
-  .carousel-cell {
-    width: 70%;
-    margin-right: 10px;
-
-    .v-responsive__content {
-      height: inherit;
-    }
-  }
-
-  .v-card__subtitle {
-    min-height: 3rem;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  .flickity-viewport .carousel-cell {
-    width: 300px !important;
-  }
-}
-
 // TODO: Usar variables
 .theme--light.v-list.v-list--nav {
   background: #f2f2f2;
@@ -116,40 +94,16 @@
 
 .div-fix-for-tabs::before {
   display: block;
-  content: ' ';
+  content: " ";
   margin-top: -176px;
   height: 176px;
   visibility: hidden;
-}
-
-.v-footer > div {
-  width: 100%;
 }
 
 .v-tooltip__content {
   background: rgba(97, 97, 97, 1) !important;
   opacity: 1 !important;
   margin: 0 15px;
-}
-
-.v-slide-group {
-  .v-slide-group__wrapper {
-    /* touch-action: pan-y !important; */
-    touch-action: auto;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-  }
-
-  /* .v-slide-group__content,
-  .v-slide-group__wrapper {
-    overflow-x: auto !important;
-  } */
-
-  // .v-slide-group__content::-webkit-scrollbar,
-  .v-slide-group__wrapper::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .disabled .v-image__image.v-image__image--cover {
