@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.4",
     "nuxt": "^3.13.0",
+    "pinia": "^2.2.2",
     "vue": "latest",
     "vue-router": "latest",
     "vuetify-nuxt-module": "^0.18.2"
@@ -20,5 +22,8 @@
     "eslint": "^9.10.0",
     "sass": "^1.78.0",
     "typescript": "^5.5.4"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
