@@ -12,4 +12,10 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: "./i18n.config.ts", // if you are using custom path, default
   },
+  runtimeConfig: {
+    apiSecret: "", // can be overridden by NUXT_API_SECRET environment variable
+    public: {
+      apiUrl: "http://localhost/api/", // can be overridden by NUXT_PUBLIC_API_BASE environment variable
+    },
+  },
 });
