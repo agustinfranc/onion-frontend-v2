@@ -1,3 +1,25 @@
 .h-100 {
   height: 100% !important;
 }
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-truncate__multiple-lines {
+  white-space: initial;
+  flex: 1 1 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.text-truncate__three-lines {
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+}
