@@ -3,6 +3,14 @@
     <template v-if="!commerce">
       <CommerceSkeleton />
     </template>
+
+    <template v-else>
+      <CommerceBody />
+
+      <!-- <CommerceCartButton v-if="cart?.length" />
+
+      <ActionButton /> -->
+    </template>
   </div>
 </template>
 
@@ -103,20 +111,6 @@ onMounted(() => {
 </script>
 
 <style>
-.theme--dark.v-application .theme--parent,
-.theme--dark.v-application .v-main__wrap,
-.theme--dark.v-application .v-main__wrap .background-default {
-  background: #121212;
-  color: #ffffff;
-}
-
-.theme--light.v-application .theme--parent,
-.theme--light.v-application .v-main__wrap,
-.theme--light.v-application .v-main__wrap .background-default {
-  background: #f2f2f2;
-  color: rgba(0, 0, 0, 0.87);
-}
-
 .v-chip.v-size--default.v-chip-h--inherit {
   height: inherit;
 }
