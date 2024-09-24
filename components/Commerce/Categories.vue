@@ -5,6 +5,7 @@
         <v-chip
           v-for="rubro in rubrosFiltered"
           :key="rubro.link_name ?? rubro.name"
+          size="small"
           color="orange"
           :value="rubro.link_name"
         >

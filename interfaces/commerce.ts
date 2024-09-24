@@ -44,6 +44,7 @@ export interface Commerce {
 }
 
 export interface Product {
+  code: string;
   id: number;
   name: string;
   description: null | string;

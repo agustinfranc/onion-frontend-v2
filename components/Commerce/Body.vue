@@ -13,7 +13,7 @@
 
       <CommerceCategories :rubros="commerce.rubros" />
 
-      <!-- <CommerceProducts /> -->
+      <CommerceProducts />
     </div>
   </div>
 </template>
