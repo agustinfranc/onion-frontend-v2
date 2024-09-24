@@ -10,8 +10,9 @@
           :value="rubro.link_name"
         >
           <nuxt-link
-            :to="`#${rubro.link_name}`"
-            @click.native="scrollTo(`#${rubro.link_name}`)"
+            replace
+            :to="{ query: { category: rubro.link_name } }"
+            @click.native="scrollTo(rubro.link_name)"
           >
             <span class="v-chip__personalized">{{ rubro.name }}</span>
           </nuxt-link>
@@ -24,20 +25,22 @@
 </template>
 
 <script setup lang="ts">
+import { useScroller } from "@/composables/useScroller";
 import type { Commerce } from "~/interfaces/commerce";
 
 const commerce = useState<Commerce>("commerce");
 const rubrosFiltered = computed(() => commerce.value.rubros);
 
+const { scrollTo } = useScroller();
 const route = useRoute();
-const selection = ref(route.hash.slice(1));
+const selection = ref(route.query.category);
 
-function scrollTo(hashtag: string) {
-  const el = document.getElementById(route.hash.slice(1));
-  if (el) {
-    window.scrollTo(0, el.offsetTop);
+watch(
+  () => route.query,
+  async () => {
+    selection.value = route.query.category;
   }
-}
+);
 </script>
 
 <style scoped>

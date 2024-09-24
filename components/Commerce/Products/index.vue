@@ -4,7 +4,7 @@
       v-for="rubro in rubrosFiltered"
       :id="rubro.link_name"
       :key="rubro.id"
-      class="theme--parent"
+      class="theme--parent category"
     >
       <v-container :key="rubro.name">
         <h3>{{ rubro.name }}</h3>
@@ -49,6 +49,7 @@
 </template>
 
 <script setup lang="ts">
+import { useScroller } from "@/composables/useScroller";
 import type { Commerce, Product } from "~/interfaces/commerce";
 
 const router = useRouter();
@@ -77,4 +78,42 @@ function openSelectedItemDialog(id: number) {
 
   router.push({ path: `/${commerce.value.name}/${id}` });
 }
+
+// IntersectionObserver logic
+
+onMounted(() => {
+  const route = useRoute();
+
+  if (route.query.category) {
+    const { scrollTo } = useScroller();
+    scrollTo(route.query.category.toString());
+  }
+
+  createObserver();
+});
+
+const createObserver = () => {
+  const observer = new IntersectionObserver(handleIntersect, {
+    rootMargin: "-20% 0px -80% 0px",
+  });
+
+  const categories = document.querySelectorAll<HTMLElement>(".category");
+  categories.forEach((category) => {
+    observer.observe(category);
+  });
+};
+
+const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      updateHash(entry.target.id);
+    }
+  });
+};
+
+const updateHash = (sectionId: string) => {
+  if (sectionId) {
+    router.replace({ query: { category: sectionId } });
+  }
+};
 </script>

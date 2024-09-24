@@ -18,4 +18,9 @@ export default defineNuxtConfig({
       apiUrl: "http://localhost/api/", // can be overridden by NUXT_PUBLIC_API_BASE environment variable
     },
   },
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
+  },
 });

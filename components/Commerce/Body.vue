@@ -11,7 +11,7 @@
         <v-divider class="mt-4"></v-divider>
       </v-container>
 
-      <CommerceCategories :rubros="commerce.rubros" />
+      <CommerceCategories />
 
       <CommerceProducts />
     </div>
