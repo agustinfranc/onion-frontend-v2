@@ -34,17 +34,16 @@
         />
 
         <!-- Slides -->
-        <!-- <CommerceProductsSlide
-          v-if="subrubro.commerces[0].pivot.slideable"
+        <CommerceProductsSlide
+          v-else
           :key="subrubro.id"
           :products="subrubro.products"
           @onOpenSelectedItemDialog="openSelectedItemDialog"
-          @onShowImageDialog="showImageDialog"
-        /> -->
+        />
       </template>
     </div>
 
-    <!-- <ImageDialog v-model="imageDialog.show" :dialog="imageDialog" /> -->
+    <ImageDialog v-model="imageDialog.show" :dialog="imageDialog" />
   </div>
 </template>
 

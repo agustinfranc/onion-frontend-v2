@@ -7,7 +7,7 @@
         :key="item.id"
         density="comfortable"
         class="mb-2"
-        @click="commerce.can_order ? openSelectedItemDialog(item.id) : ''"
+        @click="commerce.can_order && openSelectedItemDialog(item.id)"
       >
         <template #prepend>
           <div class="mr-4">
@@ -19,7 +19,7 @@
               width="100"
               :src="`${item.avatar_dirname}${item.avatar ? item.avatar : ''}`"
               :class="{ disabled: item.disabled }"
-              @click="!commerce.can_order ? showImageDialog(item) : ''"
+              @click="!commerce.can_order && showImageDialog(item)"
             >
               <div
                 v-if="item.disabled"
@@ -51,6 +51,7 @@
             <template #activator="{ props }">
               <span v-bind="props">{{ item.description }}</span>
             </template>
+
             <span>{{ item.description }}</span>
           </v-tooltip>
           <span v-else>{{ item.description }}</span>
@@ -96,6 +97,7 @@
 </template>
 
 <script setup lang="ts">
+import { useScroller } from "@/composables/useScroller";
 import type { PropType } from "vue";
 import type { Commerce, Product } from "~/interfaces/commerce";
 
@@ -106,6 +108,8 @@ const props = defineProps({
   },
 });
 
+const { scrollTo } = useScroller();
+
 const commerce = useState<Commerce>("commerce");
 
 const emit = defineEmits(["onOpenSelectedItemDialog", "onShowImageDialog"]);
@@ -115,12 +119,6 @@ function openSelectedItemDialog(id: number) {
 }
 function showImageDialog(item: Product) {
   emit("onShowImageDialog", item);
-}
-function scrollTo(hashtag: string) {
-  const el = document.querySelector(hashtag) as HTMLElement;
-  if (el) {
-    window.scrollTo(0, el.offsetTop);
-  }
 }
 </script>
 

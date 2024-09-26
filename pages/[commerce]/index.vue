@@ -95,19 +95,6 @@ commerceMetadata.value &&
       },
     ],
   });
-
-function scrollTo(hashtag: string) {
-  const el = document.getElementById(route.hash.slice(1));
-  if (el) {
-    window.scrollTo(0, el.offsetTop);
-  }
-}
-
-onMounted(() => {
-  if (route.hash) {
-    setTimeout(() => scrollTo(route.hash), 500);
-  }
-});
 </script>
 
 <style>
