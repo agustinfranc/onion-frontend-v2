@@ -23,4 +23,17 @@ export default defineNuxtConfig({
       scrollBehaviorType: "smooth",
     },
   },
+
+  // Used to prerender routes using nuxt generate for a static hosting
+  // https://nuxt.com/docs/getting-started/prerendering#prerenderroutes-nuxt-hook
+  hooks: {
+    async "prerender:routes"(ctx) {
+      const commerces = await fetch("https://api.onion.ar/api/commerces").then(
+        (res) => res.json()
+      );
+      for (const commerce of commerces) {
+        ctx.routes.add(`/${commerce.name}`);
+      }
+    },
+  },
 });
