@@ -1,5 +1,5 @@
 <template>
-  <div class="theme--parent position-sticky top-0">
+  <div id="categories--top-bar" class="theme--parent position-sticky top-0">
     <div class="container py-1">
       <v-chip-group column v-model="selection">
         <v-chip
@@ -41,10 +41,24 @@ watch(
     selection.value = route.query.category;
   }
 );
+
+onMounted(() => {
+  const categoriesTopBar = document.querySelector(
+    "#categories--top-bar"
+  ) as HTMLElement;
+
+  document.documentElement.style.scrollPaddingTop = `${categoriesTopBar.offsetHeight}px`;
+});
 </script>
 
 <style scoped>
 div.theme--parent {
   z-index: 1;
+}
+</style>
+
+<style>
+html {
+  scroll-padding-top: 25vh; /* Adjust according to your top-bar height */
 }
 </style>
