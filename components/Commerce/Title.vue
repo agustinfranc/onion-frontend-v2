@@ -2,10 +2,12 @@
   <v-sheet
     height="280"
     class="v-image__image--cover background-cover"
+    v-intersect="(isIntersecting: boolean) => emit('onTitleIntersect', isIntersecting)"
     :style="`background-image: linear-gradient(to top, rgba(30, 30, 30, 0.2), rgba(99, 99, 99, 0)), url(${commerce.cover_dirname});`"
   >
     <div class="d-flex flex-column align-end justify-end h-100">
       <div
+        v-if="!newHeaderConcept"
         class="ma-3 mb-auto position-fixed top-0 right-0"
         style="z-index: 2"
         @mouseover="showSeachField"
@@ -37,72 +39,13 @@
       </div>
 
       <div
-        class="transition-swing text-h5 pa-3 rounded-t-xl d-flex justify-space-between align-center theme--parent w-100"
-        style="z-index: 1"
+        class="transition-swing text-h5 pa-3 rounded-t-xl d-flex justify-space-between align-center theme--parent w-100 z-1"
       >
-        {{ commerce.fullname }}
+        <span>
+          {{ commerce.fullname }}
+        </span>
 
-        <div>
-          <a
-            v-if="commerce.whatsapp_number"
-            :href="`https://wa.me/${commerce.whatsapp_number}/`"
-            target="_blank"
-          >
-            <v-icon class="mx-1" size="24px">mdi-whatsapp</v-icon>
-          </a>
-
-          <a
-            v-if="commerce.phone_number"
-            :href="`tel:${commerce.phone_number}`"
-          >
-            <v-icon class="mx-1" size="24px">mdi-phone</v-icon>
-          </a>
-
-          <a
-            v-if="commerce.instagram_account"
-            :href="`https://www.instagram.com/${commerce.instagram_account}/`"
-            target="_blank"
-          >
-            <v-icon class="mx-1" size="24px">mdi-instagram</v-icon>
-          </a>
-
-          <a
-            v-if="commerce.facebook_account"
-            :href="`https://www.facebook.com/${commerce.facebook_account}/`"
-            target="_blank"
-          >
-            <v-icon class="mx-1" size="24px">mdi-facebook</v-icon>
-          </a>
-
-          <a
-            v-if="commerce.tiktok_account"
-            :href="`https://vm.tiktok.com/${commerce.tiktok_account}/`"
-            target="_blank"
-            style="position: relative; top: 4px"
-          >
-            <img
-              width="22"
-              height="22"
-              src="https://sf16-scmcdn-va.ibytedtos.com/goofy/tiktok/web/node/_next/static/images/logo-dark-e95da587b6efa1520dcd11f4b45c0cf6.svg"
-            />
-          </a>
-
-          <a
-            v-if="commerce.youtube_account"
-            :href="`https://www.youtube.com/c/${commerce.youtube_account}/`"
-            target="_blank"
-          >
-            <v-icon class="mx-1" size="24px">mdi-youtube</v-icon>
-          </a>
-
-          <a
-            v-if="commerce.maps_account"
-            :href="commerce.maps_account"
-            target="_blank"
-          >
-            <v-icon class="mx-1" size="24px">mdi-google-maps</v-icon>
-          </a>
-        </div>
+        <CommerceLinks />
       </div>
     </div>
   </v-sheet>
@@ -113,6 +56,10 @@ import { useTemplateRef } from "vue";
 import type { Commerce } from "~/interfaces/commerce";
 
 const { t } = useI18n();
+
+const newHeaderConcept = inject("newHeaderConcept");
+
+const emit = defineEmits(["onTitleIntersect"]);
 
 const commerce = useState<Commerce>("commerce");
 const search = useState<string>("search");
