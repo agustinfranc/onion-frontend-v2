@@ -5,7 +5,7 @@
     :class="{ 'bg-background': !props.isTitleIntersecting }"
   >
     <v-container
-      v-if="newHeaderConcept && !props.isTitleIntersecting"
+      v-if="newHeaderConcept && (!props.isTitleIntersecting || search)"
       class="pb-0 pt-2 d-flex align-center"
     >
       <v-text-field
@@ -15,18 +15,19 @@
         flat
         class="mr-11"
         density="compact"
-        :label="t('Search')"
         prepend-inner-icon="mdi-magnify"
         variant="solo-filled"
+        :label="t('Search')"
+        v-model="search"
       ></v-text-field>
 
-      <CommerceLinks />
+      <CommerceLinks v-if="!props.isTitleIntersecting" />
     </v-container>
 
     <v-container class="py-2 pr-0">
       <v-chip-group v-if="!newHeaderConcept" column v-model="selection">
         <v-chip
-          v-for="rubro in rubrosFiltered"
+          v-for="rubro in filteredCategories"
           :key="rubro.link_name ?? rubro.name"
           size="small"
           color="orange"
@@ -44,10 +45,10 @@
 
       <v-slide-group v-else v-model="selection" center-active>
         <v-slide-group-item
-          v-for="rubro in rubrosFiltered"
+          v-for="rubro in filteredCategories"
           :key="rubro.link_name ?? rubro.name"
           :value="rubro.link_name"
-          v-slot="{ isSelected, toggle }"
+          v-slot="{ isSelected }"
         >
           <v-chip class="ma-1" :color="isSelected ? 'orange' : undefined">
             <nuxt-link
@@ -67,8 +68,7 @@
 </template>
 
 <script setup lang="ts">
-import { useScroller } from "@/composables/useScroller";
-import type { Commerce } from "~/interfaces/commerce";
+import type { Rubro } from "~/interfaces/commerce";
 
 const { t } = useI18n();
 
@@ -78,8 +78,11 @@ const props = defineProps({
   isTitleIntersecting: Boolean,
 });
 
-const commerce = useState<Commerce>("commerce");
-const rubrosFiltered = computed(() => commerce.value.rubros);
+const search = useStore("search") as Ref<string>;
+
+const filteredCategories = useStore("filteredCategories") as ComputedRef<
+  Rubro[]
+>;
 
 const { scrollTo } = useScroller();
 const route = useRoute();

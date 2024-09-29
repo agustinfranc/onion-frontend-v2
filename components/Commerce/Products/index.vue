@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-for="rubro in rubrosFiltered"
+      v-for="rubro in filteredCategories"
       :id="rubro.link_name"
       :key="rubro.id"
       class="theme--parent category"
@@ -49,12 +49,14 @@
 
 <script setup lang="ts">
 import { useScroller } from "@/composables/useScroller";
-import type { Commerce, Product } from "~/interfaces/commerce";
+import type { Commerce, Product, Rubro } from "~/interfaces/commerce";
 
 const router = useRouter();
 const commerce = useState<Commerce>("commerce");
 
-const rubrosFiltered = computed(() => commerce.value.rubros);
+const filteredCategories = useStore("filteredCategories") as ComputedRef<
+  Rubro[]
+>;
 
 const imageDialog = ref({
   show: false,
