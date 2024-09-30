@@ -1,6 +1,6 @@
 .v-application a {
   text-decoration: none;
-  color: initial;
+  color: rgb(var(--v-theme-on-background));
 }
 
 .v-main__wrap > div {
