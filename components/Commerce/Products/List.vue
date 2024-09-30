@@ -17,7 +17,7 @@
               cover
               height="100"
               width="100"
-              :src="`${item.avatar_dirname}${item.avatar ? item.avatar : ''}`"
+              :src="`${item.avatar_dirname}${item.avatar ?? ''}`"
               :class="{ disabled: item.disabled }"
               @click="!commerce.can_order && showImageDialog(item)"
             >

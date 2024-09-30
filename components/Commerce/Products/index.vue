@@ -67,9 +67,7 @@ const imageDialog = ref({
 function showImageDialog(item: Product) {
   if (!item.avatar_dirname) return;
 
-  imageDialog.value.imgSrc = `${item.avatar_dirname}${
-    item.avatar ? item.avatar : ""
-  }`;
+  imageDialog.value.imgSrc = `${item.avatar_dirname}${item.avatar ?? ""}`;
 
   imageDialog.value.show = true;
 }

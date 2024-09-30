@@ -15,7 +15,7 @@
             class="white--text align-end"
             :class="{ disabled: item.disabled }"
             height="200px"
-            :src="`${item.avatar_dirname}${item.avatar ? item.avatar : ''}`"
+            :src="`${item.avatar_dirname}${item.avatar ?? ''}`"
           >
             <div
               v-if="item.disabled"
