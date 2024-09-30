@@ -14,8 +14,7 @@
 
         <div class="text-center">
           <span>
-            made with
-            <v-icon>mdi-heart</v-icon> by
+            by
             <router-link to="/">
               <span
                 :class="

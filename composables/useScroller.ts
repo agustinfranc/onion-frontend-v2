@@ -3,7 +3,7 @@ export function useScroller() {
     const element = document.getElementById(elementId);
 
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView();
     }
   }
 
