@@ -9,12 +9,11 @@
         <v-spacer></v-spacer>
 
         <v-btn
-          color="black"
-          icon
+          class="bg-grey-darken-1"
+          icon="mdi-close"
+          variant="elevated"
           @click.stop="$emit('update:modelValue', false)"
-        >
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
+        />
       </v-app-bar>
 
       <template #placeholder>
