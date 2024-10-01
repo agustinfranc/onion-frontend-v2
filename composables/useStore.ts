@@ -14,7 +14,7 @@ export function useStore(key: "search" | "filteredCategories") {
         subrubros: rubro.subrubros.map((subrubro) => ({
           ...subrubro,
           products: subrubro.products.filter((product) =>
-            product.name.toLowerCase().includes(search.value)
+            product.name.toLowerCase().includes(search.value.toLowerCase())
           ),
         })),
       })) // filtro articulos
