@@ -1,6 +1,6 @@
 export default defineI18nConfig(() => ({
   legacy: false,
-  locale: "en",
+  baseUrl: "https://onion.ar",
   messages: {
     en: {
       Welcome: "Welcome",
@@ -21,6 +21,8 @@ export default defineI18nConfig(() => ({
       Visible: "Visible",
       Disabled: "Disabled",
       Description: "Description",
+
+      "Add to cart": "Add to cart",
     },
     es: {
       Welcome: "Bienvenido",
@@ -41,6 +43,8 @@ export default defineI18nConfig(() => ({
       Visible: "Visible",
       Disabled: "No disponible",
       Description: "Descripción",
+
+      "Add to cart": "Agregar al pedido",
     },
     ar: {
       Welcome: "مرحبًا",

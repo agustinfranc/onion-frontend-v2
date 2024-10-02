@@ -10,7 +10,10 @@ export default defineNuxtConfig({
   ],
   css: ["~/assets/css/main.scss", "~/assets/css/helpers.scss"],
   i18n: {
-    vueI18n: "./i18n.config.ts", // if you are using custom path, default
+    locales: ["en", "es", "ar"],
+    defaultLocale: "es",
+    strategy: "no_prefix",
+    vueI18n: "./i18n.config.ts",
   },
   runtimeConfig: {
     apiSecret: "", // can be overridden by NUXT_API_SECRET environment variable

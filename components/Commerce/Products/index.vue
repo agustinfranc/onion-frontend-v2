@@ -11,7 +11,7 @@
       </v-container>
 
       <div class="px-3">
-        <v-divider></v-divider>
+        <v-divider />
       </div>
 
       <template v-for="subrubro in rubro.subrubros">
@@ -29,7 +29,7 @@
           v-if="!subrubro.commerces[0]?.pivot.slideable"
           :key="subrubro.id"
           :products="subrubro.products"
-          @onOpenSelectedItemDialog="openSelectedItemDialog"
+          @onOpenSelectedItemDialog="navigateToProductPage"
           @onShowImageDialog="showImageDialog"
         />
 
@@ -38,7 +38,7 @@
           v-else
           :key="subrubro.id"
           :products="subrubro.products"
-          @onOpenSelectedItemDialog="openSelectedItemDialog"
+          @onOpenSelectedItemDialog="navigateToProductPage"
         />
       </template>
     </div>
@@ -51,6 +51,7 @@
 import { useScroller } from "@/composables/useScroller";
 import type { Commerce, Product, Rubro } from "~/interfaces/commerce";
 
+const localeRoute = useLocaleRoute();
 const router = useRouter();
 const commerce = useState<Commerce>("commerce");
 
@@ -72,10 +73,17 @@ function showImageDialog(item: Product) {
   imageDialog.value.show = true;
 }
 
-function openSelectedItemDialog(id: number) {
+function navigateToProductPage(id: number) {
   if (typeof id !== "number") return;
 
-  router.push({ path: `/${commerce.value.name}/${id}` });
+  const route = localeRoute({
+    name: "commerce-product",
+    params: { product: id, commerce: commerce.value.name },
+  });
+
+  if (route) {
+    return navigateTo(route);
+  }
 }
 
 // IntersectionObserver logic
