@@ -1,7 +1,6 @@
 <template>
   <v-layout>
-    <div class="d-flex text-center">
-      <img alt="Vuetify.js" class="mb-5" />
+    <div class="d-flex text-center w-">
       <blockquote class="blockquote">
         &#8220;First, solve the problem. Then, write the code.&#8221;
         <footer>

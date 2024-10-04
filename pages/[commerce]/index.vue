@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import { useTheme } from "vuetify";
-import type { Commerce } from "~/interfaces/commerce";
+import type { Commerce, Product } from "~/interfaces/commerce";
 
 const theme = useTheme();
 const { t } = useI18n();
@@ -24,7 +24,7 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const commerce = useState<Commerce>("commerce");
 
-const cart = useState<any[]>("cart");
+const cart = useState<Product[]>("cart");
 
 if (!cart.value) {
   cart.value = [];

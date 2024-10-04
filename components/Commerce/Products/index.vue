@@ -26,7 +26,7 @@
 
         <!-- Lists -->
         <CommerceProductsList
-          v-if="!subrubro.commerces[0]?.pivot.slideable"
+          v-if="!subrubro.commerces[0]?.pivot?.slideable"
           :key="subrubro.id"
           :products="subrubro.products"
           @onOpenSelectedItemDialog="navigateToProductPage"
