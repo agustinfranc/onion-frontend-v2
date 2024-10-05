@@ -58,22 +58,22 @@
                 v-if="item.price && !item.product_prices.length"
                 class="mt-1 text-body-2"
                 >{{ commerce.currency ? commerce.currency.symbol + " " : ""
-                }}{{ item.price.toFixed(2) }}</span
+                }}{{ item.price }}</span
               >
 
               <v-chip
-                v-for="price in item.product_prices"
-                :key="price.id"
+                v-for="product_price in item.product_prices"
+                :key="product_price.id"
                 class="v-chip-h--inherit ma-1 text-center"
                 variant="outlined"
                 label
               >
-                <span v-if="price.name" class="mr-3"
-                  >{{ price.name ? price.name + " " : "" }}
+                <span v-if="product_price.name" class="mr-3"
+                  >{{ product_price.name ? product_price.name + " " : "" }}
                 </span>
-                <span v-if="price.price">
+                <span v-if="product_price.price">
                   {{ commerce.currency ? commerce.currency.symbol + " " : ""
-                  }}{{ price.price.toFixed(2) }}
+                  }}{{ product_price.price }}
                 </span>
               </v-chip>
             </div>

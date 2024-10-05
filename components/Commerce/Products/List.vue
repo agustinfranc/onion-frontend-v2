@@ -62,7 +62,7 @@
             v-if="item.price && !item.product_prices.length"
             class="mt-1 text-body-2 font-weight-black"
             >{{ commerce.currency ? commerce.currency.symbol : ""
-            }}{{ item.price.toFixed(2) }}</span
+            }}{{ item.price }}</span
           >
 
           <v-chip
@@ -78,7 +78,7 @@
             </span>
             <span v-if="price.price">
               {{ commerce.currency ? commerce.currency.symbol + " " : ""
-              }}{{ price.price.toFixed(2) }}
+              }}{{ price.price }}
             </span>
           </v-chip>
         </div>

@@ -14,15 +14,19 @@ import type { Product } from "~/interfaces/product";
 
 const config = useRuntimeConfig();
 const route = useRoute();
-const router = useRouter();
+const localeRoute = useLocaleRoute();
 
 const commerce = useState<Commerce>("commerce");
 
 if (!commerce.value) {
-  router.push({
+  const to = localeRoute({
     name: "commerce",
     params: { commerce: route.params.commerce },
   });
+
+  if (to) {
+    navigateTo(to);
+  }
 }
 
 const { data, status } = await useLazyAsyncData<Product>("product", () =>
