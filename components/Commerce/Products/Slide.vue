@@ -5,6 +5,7 @@
         <v-card
           class="ma-2"
           min-height="370"
+          max-height="370"
           width="224"
           max-width="400"
           @click="commerce.can_order ? openSelectedItemDialog(item.id) : ''"
@@ -27,10 +28,7 @@
             </div>
           </v-img>
 
-          <v-card-title
-            class="text-truncate d-inline-block"
-            style="width: 100%"
-          >
+          <v-card-title class="text-truncate d-inline-block w-100">
             <v-tooltip location="bottom">
               <template #activator="{ props }">
                 <span v-bind="props">{{ item.name }}</span>
@@ -39,9 +37,7 @@
             </v-tooltip>
           </v-card-title>
 
-          <v-card-subtitle
-            class="pb-0 text-truncate__multiple-lines text-truncate__three-lines"
-          >
+          <v-card-subtitle>
             <v-tooltip location="bottom">
               <template #activator="{ props }">
                 <span v-bind="props">
@@ -105,3 +101,18 @@ function openSelectedItemDialog(id: number) {
   emit("onOpenSelectedItemDialog", id);
 }
 </script>
+
+<style scoped lang="scss">
+.v-card-subtitle {
+  white-space: inherit;
+
+  span {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+</style>
