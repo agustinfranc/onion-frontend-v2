@@ -7,16 +7,17 @@
     <template v-else>
       <CommerceBody />
 
-      <!-- <CommerceCartButton v-if="cart?.length" />
+      <CommerceCartButton v-if="cart?.length" />
 
-      <ActionButton /> -->
+      <!-- <ActionButton /> -->
     </template>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useTheme } from "vuetify";
-import type { Commerce, Product } from "~/interfaces/commerce";
+import type { CartProduct } from "~/interfaces/cart";
+import type { Commerce } from "~/interfaces/commerce";
 
 const theme = useTheme();
 const { t } = useI18n();
@@ -24,11 +25,7 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const commerce = useState<Commerce>("commerce");
 
-const cart = useState<Product[]>("cart");
-
-if (!cart.value) {
-  cart.value = [];
-}
+const cart = useState<CartProduct[]>("cart");
 
 if (!commerce.value) {
   // Calls fast endpoint in the server side to get commerce fullname and covers

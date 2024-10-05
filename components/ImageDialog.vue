@@ -5,7 +5,7 @@
       :lazy-src="dialog.imgLazySrc"
       :src="dialog.imgSrc"
     >
-      <v-app-bar variant="flat" color="rgba(0, 0, 0, 0)">
+      <v-app-bar flat color="rgba(0, 0, 0, 0)">
         <v-spacer />
 
         <v-btn

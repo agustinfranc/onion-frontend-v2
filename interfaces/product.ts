@@ -15,10 +15,6 @@ export interface Product {
   product_hashtags: any[];
   product_prices: any[];
   product_options_groupes: ProductOptionsGroupe[];
-
-  quantity?: number;
-  note?: string;
-  options?: FormType;
 }
 
 export interface ProductOptionsGroupe {
@@ -69,8 +65,3 @@ export interface Rubro {
   updated_at: null;
   deleted_at: null;
 }
-
-type FormType = Record<
-  string | number, // Group ID
-  ProductOption[] | Record<string | number, ProductOption> // Array for checkboxes, object for options with quantity
->;

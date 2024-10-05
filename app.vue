@@ -64,6 +64,7 @@
 
 <script setup lang="ts">
 import { useTheme } from "vuetify";
+import type { Order } from "./interfaces/order";
 
 const { setLocale, locale } = useI18n();
 
@@ -72,4 +73,18 @@ const theme = useTheme();
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
 }
+
+// Initialize store
+useState("cart", () => []);
+
+useState<Order>("order", () => ({
+  address: {},
+  branch: null,
+  note: "",
+  payMethod: {},
+  deliveryMethod: null,
+  client: {
+    name: null,
+  },
+}));
 </script>

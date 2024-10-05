@@ -16,10 +16,6 @@
     </div>
 
     <v-card class="flex-0-0" :loading="loading">
-      <template slot="progress">
-        <v-progress-linear color="blue" height="10" indeterminate />
-      </template>
-
       <v-img
         cover
         height="150"
@@ -176,13 +172,14 @@
 
 <script setup lang="ts">
 import type { PropType } from "vue";
+import type { CartProduct } from "~/interfaces/cart";
 import type { Commerce } from "~/interfaces/commerce";
 import type { Product, ProductOption } from "~/interfaces/product";
 
 const localeRoute = useLocaleRoute();
 
 const commerce = useState<Commerce>("commerce");
-const cart = useState<Product[]>("cart");
+const cart = useState<CartProduct[]>("cart");
 
 const props = defineProps({
   item: {
