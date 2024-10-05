@@ -56,7 +56,7 @@
             <div>
               <span
                 v-if="item.price && !item.product_prices.length"
-                class="mt-1 text-body-2"
+                class="mt-1 text-body-2 font-weight-black"
                 >{{ commerce.currency ? commerce.currency.symbol + " " : ""
                 }}{{ item.price }}</span
               >
