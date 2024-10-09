@@ -27,9 +27,10 @@
               >
                 <v-chip
                   size="x-small"
-                  class="ma-2"
+                  class="ma-2 justify-center"
                   color="red"
                   text-color="white"
+                  variant="flat"
                 >
                   {{ $t("Disabled") }}
                 </v-chip>

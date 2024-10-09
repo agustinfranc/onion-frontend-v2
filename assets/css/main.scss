@@ -64,8 +64,10 @@
   margin: 0 15px;
 }
 
-.disabled .v-image__image.v-image__image--cover {
-  filter: grayscale(100%);
+.disabled {
+  .v-img__img {
+    filter: grayscale(100%);
+  }
 }
 
 .v-dialog:not(.v-dialog--fullscreen) {
