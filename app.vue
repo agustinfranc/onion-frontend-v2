@@ -78,10 +78,18 @@ function toggleTheme() {
 useState("cart", () => []);
 
 useState<Order>("order", () => ({
-  address: {},
+  address: {
+    address: "",
+    floor: "",
+    description: "",
+  },
   branch: null,
   note: "",
-  payMethod: {},
+  payMethod: {
+    id: 0,
+    name: "",
+    disabled: false,
+  },
   deliveryMethod: null,
   client: {
     name: null,

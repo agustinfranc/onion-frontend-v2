@@ -1,10 +1,32 @@
+import type { CommerceBranch } from "./commerce";
+
 export interface Order {
-  address: Object;
-  branch: Object | null;
+  address: OrderAddress;
+  branch: CommerceBranch | null;
   note: string;
-  payMethod: Object;
-  deliveryMethod: Object | null;
+  payMethod: PayMethod;
+  deliveryMethod: DeliveryMethod | null;
   client: {
     name: string | null;
   };
+}
+
+export interface OrderAddress {
+  address: string;
+  floor: string;
+  description: string;
+}
+
+export interface PayMethod {
+  id: number;
+  name: string;
+  disabled: boolean;
+  subtitle?: string;
+}
+
+export interface DeliveryMethod {
+  id: number;
+  name: string;
+  disabled: boolean;
+  selectedTimeOption: string | undefined;
 }

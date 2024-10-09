@@ -1,14 +1,18 @@
 :root {
   --footer-height: 44px;
+
+  .v-theme--light {
+    --v-theme-background: 242, 242, 242;
+  }
+
+  .v-theme--dark {
+    --v-theme-background: 18, 18, 18;
+  }
 }
 
 .v-application a {
   text-decoration: none;
   color: rgb(var(--v-theme-on-background));
-}
-
-.v-main__wrap > div {
-  background: inherit;
 }
 
 .v-toolbar {
@@ -32,28 +36,10 @@
   display: flex;
 }
 
-.v-tabs {
-  .v-tabs-slider-wrapper {
-    color: white !important;
-  }
-}
-
-.v-theme--dark.v-application .theme--parent {
-  background: #121212;
-  color: #ffffff;
-}
-
-.v-theme--light.v-application .theme--parent {
-  background: #f2f2f2;
-  color: rgba(0, 0, 0, 0.87);
-}
-
 .v-theme--dark {
   .v-list.v-list--nav {
-    background: #121212;
-
     .v-list-item {
-      background: #1e1e1e;
+      background: rgba(var(--v-theme-surface));
     }
   }
 
@@ -66,10 +52,8 @@
 
 .v-theme--light {
   .v-list.v-list--nav {
-    background: #f2f2f2;
-
     .v-list-item {
-      background: #fff;
+      background: rgba(var(--v-theme-surface));
     }
   }
 
@@ -80,24 +64,10 @@
   }
 }
 
-.v-list--three-line .v-list-item .v-list-item__subtitle,
-.v-list-item--three-line .v-list-item__subtitle {
-  -webkit-line-clamp: 3 !important;
-  line-clamp: 3 !important;
-}
-
 .v-card {
-  .v-card__title {
+  .v-card-title {
     font-size: 1rem;
   }
-}
-
-.div-fix-for-tabs::before {
-  display: block;
-  content: " ";
-  margin-top: -176px;
-  height: 176px;
-  visibility: hidden;
 }
 
 .v-tooltip__content {
