@@ -37,12 +37,6 @@
 }
 
 .v-theme--dark {
-  .v-list.v-list--nav {
-    .v-list-item {
-      background: rgba(var(--v-theme-surface));
-    }
-  }
-
   .v-chip {
     a .v-chip__personalized {
       color: #fff !important;
@@ -51,12 +45,6 @@
 }
 
 .v-theme--light {
-  .v-list.v-list--nav {
-    .v-list-item {
-      background: rgba(var(--v-theme-surface));
-    }
-  }
-
   .v-chip {
     a .v-chip__personalized {
       color: rgba(0, 0, 0, 0.87) !important;

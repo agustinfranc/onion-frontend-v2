@@ -5,7 +5,6 @@
         <v-card
           class="ma-2"
           min-height="370"
-          max-height="370"
           width="224"
           max-width="400"
           @click="commerce.can_order ? openSelectedItemDialog(item.id) : ''"

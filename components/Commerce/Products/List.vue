@@ -1,12 +1,12 @@
 <template>
   <v-container class="commerce-products-list">
-    <v-list nav mandatory lines="three" class="px-0 bg-background">
+    <v-list mandatory lines="three" class="px-0 bg-background">
       <v-list-item
         v-for="item in props.products"
         :id="`${item.code ?? item.id}`"
         :key="item.id"
         density="comfortable"
-        class="mb-2"
+        class="mb-2 bg-surface"
         @click="commerce.can_order && openSelectedItemDialog(item.id)"
       >
         <template #prepend>
@@ -38,9 +38,7 @@
           </div>
         </template>
 
-        <v-list-item-title class="text-subtitle-2 mb-2">{{
-          item.name
-        }}</v-list-item-title>
+        <v-list-item-title class="mb-2">{{ item.name }}</v-list-item-title>
 
         <v-list-item-subtitle class="mb-1">
           <v-tooltip
@@ -71,14 +69,18 @@
             :key="price.id"
             class="v-chip-h--inherit ma-1 text-center"
             variant="outlined"
+            size="small"
             label
           >
-            <span v-if="price.name" class="mr-3"
+            <span v-if="price.name" class="mr-2"
               >{{ price.name ? price.name + " " : "" }}
             </span>
             <span v-if="price.price">
-              {{ commerce.currency ? commerce.currency.symbol + " " : ""
-              }}{{ price.price }}
+              {{
+                commerce.currency
+                  ? commerce.currency.symbol + price.price
+                  : price.price
+              }}
             </span>
           </v-chip>
         </div>
