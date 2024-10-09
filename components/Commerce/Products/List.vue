@@ -1,6 +1,6 @@
 <template>
   <v-container class="commerce-products-list">
-    <v-list nav mandatory lines="three" class="px-0">
+    <v-list nav mandatory lines="three" class="px-0 bg-background">
       <v-list-item
         v-for="item in props.products"
         :id="`${item.code ?? item.id}`"

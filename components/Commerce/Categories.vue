@@ -1,7 +1,7 @@
 <template>
   <div
     id="categories--top-bar"
-    class="theme--parent position-sticky top-0 z-1"
+    class="bg-background position-sticky top-0 z-1"
     :class="{ 'bg-background': !props.isTitleIntersecting }"
   >
     <v-container

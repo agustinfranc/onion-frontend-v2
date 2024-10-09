@@ -20,19 +20,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { CartProduct } from "~/interfaces/cart";
 import type { Order } from "~/interfaces/order";
 
 const order = useState<Order>("order");
 
-const cart = useState<CartProduct[]>("cart");
-
-const subtotalCalc = computed(() =>
-  cart.value.reduce(
-    (previous, current) => previous + current.price * current.quantity,
-    0
-  )
-);
+const subtotalCalc = useStore("subtotalCalc") as ComputedRef<number>;
 
 const note = ref();
 

@@ -4,7 +4,7 @@
       v-for="rubro in filteredCategories"
       :id="rubro.link_name"
       :key="rubro.id"
-      class="theme--parent category"
+      class="bg-background category"
     >
       <v-container :key="rubro.name">
         <h3>{{ rubro.name }}</h3>

@@ -39,7 +39,7 @@
       </div>
 
       <div
-        class="transition-swing text-h5 pa-3 rounded-t-xl d-flex justify-space-between align-center theme--parent w-100 z-1"
+        class="transition-swing text-h5 pa-3 rounded-t-xl d-flex justify-space-between align-center bg-background w-100 z-1"
       >
         <span>
           {{ commerce.fullname }}

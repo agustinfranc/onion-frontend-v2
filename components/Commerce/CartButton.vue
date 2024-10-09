@@ -3,7 +3,7 @@
     <v-btn
       block
       nuxt
-      large
+      size="large"
       color="primary"
       :to="
         localeRoute({

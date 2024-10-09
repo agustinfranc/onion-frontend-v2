@@ -4,10 +4,10 @@
       <CommerceTitle @onTitleIntersect="onTitleIntersect" />
     </template>
 
-    <div class="position-relative theme--parent">
+    <div class="position-relative bg-background">
       <v-container
         v-if="!newHeaderConcept && commerce.rubros"
-        class="theme--parent"
+        class="bg-background"
       >
         <h3>{{ t("Categories") }}</h3>
 
