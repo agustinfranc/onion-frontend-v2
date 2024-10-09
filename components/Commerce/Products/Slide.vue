@@ -3,7 +3,7 @@
     <v-slide-group v-model="selection">
       <v-slide-group-item v-for="item in props.products" :key="item.id">
         <v-card
-          class="ma-2"
+          class="ma-2 d-flex flex-column"
           min-height="370"
           max-height="370"
           width="224"
@@ -37,7 +37,7 @@
             </v-tooltip>
           </v-card-title>
 
-          <v-card-subtitle>
+          <v-card-subtitle class="flex-1-1-100">
             <v-tooltip location="bottom">
               <template #activator="{ props }">
                 <span v-bind="props">
