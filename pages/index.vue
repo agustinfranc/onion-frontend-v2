@@ -12,3 +12,13 @@
     </div>
   </v-layout>
 </template>
+
+<script lang="ts" setup>
+const route = useRoute();
+
+if (!route.params.commerce) {
+  await navigateTo("https://onion.ar", {
+    external: true,
+  });
+}
+</script>
