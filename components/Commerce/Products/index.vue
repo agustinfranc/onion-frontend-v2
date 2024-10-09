@@ -62,7 +62,7 @@ const filteredCategories = useStore("filteredCategories") as ComputedRef<
 const imageDialog = ref({
   show: false,
   imgSrc: "",
-  imgLazySrc: "https://picsum.photos/id/11/10/6",
+  imgLazySrc: "/img/lazy-img.jpg",
 });
 
 function showImageDialog(item: Product) {
