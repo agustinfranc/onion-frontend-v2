@@ -66,7 +66,13 @@
 import { useTheme } from "vuetify";
 import type { Order } from "./interfaces/order";
 
-const { setLocale, locale } = useI18n();
+const { setLocale, locale, getBrowserLocale } = useI18n();
+
+const browserLocale = getBrowserLocale();
+
+if (browserLocale) {
+  setLocale(browserLocale);
+}
 
 const theme = useTheme();
 

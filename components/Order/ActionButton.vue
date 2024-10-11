@@ -1,8 +1,8 @@
 <template>
   <v-container class="position-fixed bg-background">
     <v-btn
-      size="large"
       block
+      size="large"
       color="primary"
       :disabled="disabled"
       @click="submitOrder"
