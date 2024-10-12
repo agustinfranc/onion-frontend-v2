@@ -4,9 +4,7 @@
       <v-slide-group-item v-for="item in props.products" :key="item.id">
         <v-card
           class="ma-2 d-flex flex-column"
-          min-height="370"
-          max-height="370"
-          width="224"
+          width="240"
           max-width="400"
           @click="commerce.can_order ? openSelectedItemDialog(item.id) : ''"
         >
@@ -28,7 +26,7 @@
             </div>
           </v-img>
 
-          <v-card-title class="text-truncate d-inline-block w-100">
+          <v-card-title>
             <v-tooltip location="bottom">
               <template #activator="{ props }">
                 <span v-bind="props">{{ item.name }}</span>
@@ -108,11 +106,15 @@ function openSelectedItemDialog(id: number) {
 
   span {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+}
+
+.v-card-title {
+  white-space: inherit;
 }
 </style>
