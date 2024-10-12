@@ -10,8 +10,22 @@ export default defineNuxtConfig({
   ],
   css: ["~/assets/css/main.scss", "~/assets/css/helpers.scss"],
   i18n: {
-    locales: ["en", "es", "ar"],
+    locales: [
+      {
+        code: "en",
+        language: "en-US",
+      },
+      {
+        code: "es",
+        language: "es-ES",
+      },
+      {
+        code: "ar",
+        language: "ar-AR",
+      },
+    ],
     defaultLocale: "es",
+    baseUrl: "https://onion.ar",
     strategy: "no_prefix",
     vueI18n: "./i18n.config.ts",
   },

@@ -74,6 +74,20 @@ if (browserLocale) {
   setLocale(browserLocale);
 }
 
+const i18nHead = useLocaleHead({
+  addSeoAttributes: {
+    canonicalQueries: ["category"],
+  },
+});
+
+useHead({
+  htmlAttrs: {
+    lang: i18nHead.value.htmlAttrs!.lang,
+  },
+  link: [...(i18nHead.value.link || [])],
+  meta: [...(i18nHead.value.meta || [])],
+});
+
 const theme = useTheme();
 
 function toggleTheme() {
