@@ -4,7 +4,7 @@
       <NuxtPage />
     </v-main>
 
-    <v-footer app>
+    <v-footer app class="w-100">
       <div class="d-flex justify-space-between align-center w-100">
         <div class="text-left">
           <span>&copy; 2020 - </span>

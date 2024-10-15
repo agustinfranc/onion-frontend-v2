@@ -8,7 +8,11 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "@nuxtjs/i18n",
   ],
-  css: ["~/assets/css/main.scss", "~/assets/css/helpers.scss"],
+  css: [
+    "~/assets/css/main.scss",
+    "~/assets/css/helpers.scss",
+    "~/assets/css/vuetify.css",
+  ],
   i18n: {
     locales: [
       {
