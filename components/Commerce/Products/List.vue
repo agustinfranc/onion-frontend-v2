@@ -126,6 +126,11 @@ function showImageDialog(item: Product) {
 </script>
 
 <style lang="scss" scoped>
+.v-list-item--three-line .v-list-item-subtitle {
+  -webkit-line-clamp: 6 !important;
+  line-clamp: 6 !important;
+}
+
 .v-list-item-title {
   -webkit-line-clamp: 2;
   line-clamp: 2;
