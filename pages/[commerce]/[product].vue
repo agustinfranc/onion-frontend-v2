@@ -29,7 +29,10 @@ if (!commerce.value) {
   }
 }
 
-const { data, status } = await useLazyAsyncData<Product>("product", () =>
-  $fetch(`${config.public.apiUrl}/products/${route.params.product}`)
-);
+const url =
+  config.public.useDynamicApiUrl && window?.location?.host
+    ? `https://${window?.location?.host}/api/products/${route.params.product}`
+    : `${config.public.apiUrl}/products/${route.params.product}`;
+
+const { data, status } = await useLazyFetch<Product>(url);
 </script>

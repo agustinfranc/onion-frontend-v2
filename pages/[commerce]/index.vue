@@ -36,8 +36,13 @@ if (!commerce.value) {
     }
   );
 
+  const url =
+    config.public.useDynamicApiUrl && window?.location?.host
+      ? `https://${window?.location?.host}/api/${route.params.commerce}`
+      : `${config.public.apiUrl}/${route.params.commerce}`;
+
   // Calls full commerce endpoint
-  useLazyFetch<Commerce>(`${config.public.apiUrl}/${route.params.commerce}`, {
+  useLazyFetch<Commerce>(url, {
     key: "commerce",
     server: false,
     deep: false,
