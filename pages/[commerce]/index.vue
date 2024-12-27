@@ -38,7 +38,7 @@ if (!commerce.value) {
 
   const url =
     config.public.useDynamicApiUrl && window?.location?.host
-      ? `https:api.//${window?.location?.host}/api/${route.params.commerce}`
+      ? `https://api.${window?.location?.host}/api/${route.params.commerce}`
       : `${config.public.apiUrl}/${route.params.commerce}`;
 
   // Calls full commerce endpoint
