@@ -31,7 +31,7 @@ if (!commerce.value) {
 
 const url =
   config.public.useDynamicApiUrl && window?.location?.host
-    ? `https://${window?.location?.host}/api/products/${route.params.product}`
+    ? `https://api.${window?.location?.host}/api/products/${route.params.product}`
     : `${config.public.apiUrl}/products/${route.params.product}`;
 
 const { data, status } = await useLazyFetch<Product>(url);
