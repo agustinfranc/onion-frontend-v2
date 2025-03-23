@@ -10,16 +10,17 @@
           name: 'commerce-cart',
         })
       "
-      >ir a mi carrito</v-btn
+      >{{ t("ir a mi carrito") }}</v-btn
     >
   </v-container>
 </template>
 
 <script lang="ts" setup>
 const localeRoute = useLocaleRoute();
+const { t } = useI18n();
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .v-container {
   bottom: var(--footer-height);
   left: 0;

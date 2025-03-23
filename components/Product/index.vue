@@ -31,7 +31,7 @@
         </div>
 
         <div class="description-container">
-          <span v-html="item.description"/>
+          <span v-html="item.description" />
         </div>
       </v-card-text>
     </v-card>
@@ -39,7 +39,7 @@
     <v-container class="overflow-y-auto">
       <v-card class="mb-4">
         <div class="d-flex justify-space-between align-center">
-          <v-card-title>Unidades</v-card-title>
+          <v-card-title>{{ t("Unidades") }}</v-card-title>
 
           <div class="mr-2">
             <v-btn-toggle>
@@ -149,12 +149,12 @@
       </template>
 
       <v-card class="mb-auto">
-        <v-card-title>¿Necesitas aclarar algo?</v-card-title>
+        <v-card-title>{{ t("¿Necesitas aclarar algo?") }}</v-card-title>
 
         <v-card-text>
           <v-textarea
             v-model="note"
-            label="Notas al producto"
+            :label="t('Notas al producto')"
             counter
             rows="1"
           />
@@ -176,6 +176,7 @@ import type { CartProduct } from "~/interfaces/cart";
 import type { Commerce } from "~/interfaces/commerce";
 import type { Product, ProductOption } from "~/interfaces/product";
 
+const { t } = useI18n();
 const localeRoute = useLocaleRoute();
 
 const commerce = useState<Commerce>("commerce");
@@ -281,7 +282,7 @@ function removeOneOption(option: ProductOption) {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .description-container {
   max-height: 35vh;
   overflow-y: auto;

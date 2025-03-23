@@ -47,7 +47,7 @@ function submitOrder() {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .v-container {
   bottom: var(--footer-height);
   left: 0;

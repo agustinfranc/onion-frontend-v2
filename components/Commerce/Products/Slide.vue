@@ -100,18 +100,18 @@ function openSelectedItemDialog(id: number) {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .v-card-subtitle {
   white-space: inherit;
+}
 
-  span {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.v-card-subtitle span {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .v-card-title {

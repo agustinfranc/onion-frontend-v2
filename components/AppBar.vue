@@ -22,7 +22,7 @@ defineProps({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
   background-color: #121212;
 }

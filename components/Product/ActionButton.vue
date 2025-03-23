@@ -23,7 +23,7 @@ defineProps({
 const emit = defineEmits(["addToCart"]);
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .v-container {
   position: fixed;
   bottom: 44px;
