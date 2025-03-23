@@ -24,7 +24,7 @@
     </v-card-text>
 
     <v-dialog v-model="selectionDialog">
-      <OrderPayMethodSelection @onSubmit="selectionDialog = false" />
+      <OrderPayMethodSelection @on-submit="selectionDialog = false" />
     </v-dialog>
   </v-card>
 </template>

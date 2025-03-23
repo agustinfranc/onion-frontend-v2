@@ -31,7 +31,7 @@
         </div>
 
         <div class="description-container">
-          <span v-html="item.description"></span>
+          <span v-html="item.description"/>
         </div>
       </v-card-text>
     </v-card>
@@ -88,7 +88,7 @@
                     :key="option.id"
                     :label="option.name"
                     :value="option"
-                  ></v-radio>
+                  />
                 </v-radio-group>
               </template>
 
@@ -100,7 +100,7 @@
                   :label="option.name"
                   :value="option"
                   @change="onChangeCheckbox(option)"
-                ></v-checkbox>
+                />
               </template>
 
               <!-- To select the number of items. Usefull for products like docena de empanadas -->
@@ -157,7 +157,7 @@
             label="Notas al producto"
             counter
             rows="1"
-          ></v-textarea>
+          />
         </v-card-text>
       </v-card>
     </v-container>
@@ -165,7 +165,7 @@
     <ProductActionButton
       :disabled="disabled"
       :loading="loading"
-      @addToCart="addToCart"
+      @add-to-cart="addToCart"
     />
   </div>
 </template>

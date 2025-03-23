@@ -33,7 +33,7 @@
     </v-card>
 
     <v-dialog v-model="selectionDialog">
-      <OrderCommerceDetailsSelection @onSubmit="selectionDialog = false" />
+      <OrderCommerceDetailsSelection @on-submit="selectionDialog = false" />
     </v-dialog>
   </div>
 </template>

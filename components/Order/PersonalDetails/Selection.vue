@@ -9,7 +9,7 @@
           :rules="nameRules"
           label="Nombre y apellido"
           required
-        ></v-text-field>
+        />
 
         <v-btn
           block

@@ -18,7 +18,7 @@
     </v-card>
 
     <v-dialog v-model="selectionDialog">
-      <OrderPersonalDetailsSelection @onSubmit="selectionDialog = false" />
+      <OrderPersonalDetailsSelection @on-submit="selectionDialog = false" />
     </v-dialog>
   </div>
 </template>

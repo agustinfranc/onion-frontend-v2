@@ -7,7 +7,7 @@
         class="mb-2"
         :title="product.name"
       >
-        <template v-slot:subtitle>
+        <template #subtitle>
           <div>
             <div class="d-flex justify-space-between">
               <div>
@@ -45,18 +45,18 @@
           </div>
         </template>
 
-        <template v-slot:prepend>
+        <template #prepend>
           <v-avatar rounded="sm" size="large">
             <v-img
               alt="Avatar"
               :src="`${product.avatar_dirname}${
                 product.avatar ? product.avatar : ''
               }`"
-            ></v-img>
+            />
           </v-avatar>
         </template>
 
-        <template v-slot:append>
+        <template #append>
           <v-btn-toggle class="mr-2">
             <v-btn
               variant="outlined"

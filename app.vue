@@ -56,12 +56,6 @@
   </v-app>
 </template>
 
-<style scoped>
-.v-app-bar--is-scrolled .v-app-bar-title__placeholder {
-  visibility: visible !important;
-}
-</style>
-
 <script setup lang="ts">
 import { useTheme } from "vuetify";
 import type { Order } from "./interfaces/order";
@@ -116,3 +110,9 @@ useState<Order>("order", () => ({
   },
 }));
 </script>
+
+<style scoped>
+.v-app-bar--is-scrolled .v-app-bar-title__placeholder {
+  visibility: visible !important;
+}
+</style>

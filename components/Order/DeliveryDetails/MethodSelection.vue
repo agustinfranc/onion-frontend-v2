@@ -25,7 +25,7 @@
           class="mt-3 px-3"
           label="Seleccionar franja horaria de retiro"
           :items="items"
-        ></v-select>
+        />
       </v-list>
 
       <v-btn

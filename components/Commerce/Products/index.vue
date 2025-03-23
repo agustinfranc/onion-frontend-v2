@@ -29,8 +29,8 @@
           v-if="!subrubro.commerces[0]?.pivot?.slideable"
           :key="subrubro.id"
           :products="subrubro.products"
-          @onOpenSelectedItemDialog="navigateToProductPage"
-          @onShowImageDialog="showImageDialog"
+          @on-open-selected-item-dialog="navigateToProductPage"
+          @on-show-image-dialog="showImageDialog"
         />
 
         <!-- Slides -->
@@ -38,7 +38,7 @@
           v-else
           :key="subrubro.id"
           :products="subrubro.products"
-          @onOpenSelectedItemDialog="navigateToProductPage"
+          @on-open-selected-item-dialog="navigateToProductPage"
         />
       </template>
     </div>

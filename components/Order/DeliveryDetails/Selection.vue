@@ -9,21 +9,21 @@
           :rules="addressRules"
           label="Dirección"
           required
-        ></v-text-field>
+        />
 
         <v-text-field
           v-model="floor"
           :rules="floorRules"
           label="Piso/Departamento"
           required
-        ></v-text-field>
+        />
 
         <v-text-field
           v-model="description"
           :rules="descriptionRules"
           label="Instrucción para la entrega"
           required
-        ></v-text-field>
+        />
 
         <v-btn
           block

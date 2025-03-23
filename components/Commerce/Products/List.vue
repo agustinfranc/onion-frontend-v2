@@ -87,10 +87,7 @@
         </div>
 
         <template v-for="hashtag in item.product_hashtags" :key="hashtag.id">
-          <nuxt-link
-            :to="`#${hashtag.to}`"
-            @click.native="scrollTo(`#${hashtag.to}`)"
-          >
+          <nuxt-link :to="`#${hashtag.to}`" @click="scrollTo(`#${hashtag.to}`)">
             <span class="mt-1 text-body-2">{{ hashtag.name }}</span>
           </nuxt-link>
         </template>

@@ -1,8 +1,8 @@
 <template>
   <v-sheet
+    v-intersect="(isIntersecting: boolean) => emit('onTitleIntersect', isIntersecting)"
     height="280"
     class="v-image__image--cover background-cover"
-    v-intersect="(isIntersecting: boolean) => emit('onTitleIntersect', isIntersecting)"
     :style="`background-image: linear-gradient(to top, rgba(30, 30, 30, 0.2), rgba(99, 99, 99, 0)), url(${commerce.cover_dirname});`"
   >
     <div class="d-flex flex-column align-end justify-end h-100">
@@ -25,7 +25,7 @@
           :label="t('Search')"
           :class="{ 'd-block': displaySearch, 'd-none': !displaySearch }"
           @focusout="hideSeachField"
-        ></v-text-field>
+        />
       </div>
 
       <div class="position-fixed" style="top: 100px">
@@ -35,7 +35,7 @@
           :src="commerce.avatar_dirname"
           width="100"
           height="100"
-        ></v-img>
+        />
       </div>
 
       <div

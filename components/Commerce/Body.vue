@@ -1,7 +1,7 @@
 <template>
   <div class="commerce-body">
     <template v-if="commerce?.name">
-      <CommerceTitle @onTitleIntersect="onTitleIntersect" />
+      <CommerceTitle @on-title-intersect="onTitleIntersect" />
     </template>
 
     <div class="position-relative bg-background">
@@ -11,7 +11,7 @@
       >
         <h3>{{ t("Categories") }}</h3>
 
-        <v-divider class="mt-4"></v-divider>
+        <v-divider class="mt-4"/>
       </v-container>
 
       <CommerceCategories :is-title-intersecting="isTitleIntersecting" />

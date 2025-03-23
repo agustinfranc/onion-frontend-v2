@@ -21,7 +21,7 @@
             rounded
             class="rounded mr-3"
             src="/img/location.jpeg"
-          ></v-img>
+          />
 
           <div v-if="!order.branch || !order.deliveryMethod">
             <h3>...</h3>
@@ -48,11 +48,11 @@
     </div>
 
     <v-dialog v-model="selectionDialog">
-      <OrderDeliveryDetailsSelection @onSubmit="selectionDialog = false" />
+      <OrderDeliveryDetailsSelection @on-submit="selectionDialog = false" />
     </v-dialog>
 
     <v-dialog v-model="selectionMethodDialog">
-      <OrderDeliveryDetailsMethodSelection @onSubmit="onSubmitDeliveryMethod" />
+      <OrderDeliveryDetailsMethodSelection @on-submit="onSubmitDeliveryMethod" />
     </v-dialog>
   </div>
 </template>

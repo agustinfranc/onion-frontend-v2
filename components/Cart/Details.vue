@@ -13,7 +13,7 @@
           counter
           rows="1"
           @change="setOrderNote"
-        ></v-textarea>
+        />
       </v-card-text>
     </v-card>
   </div>
