@@ -22,7 +22,7 @@
           v-model="search"
           variant="solo"
           clearable
-          :label="t('Search')"
+          :label="$t('Search')"
           :class="{ 'd-block': displaySearch, 'd-none': !displaySearch }"
           @focusout="hideSeachField"
         />
@@ -54,8 +54,6 @@
 <script setup lang="ts">
 import { useTemplateRef } from "vue";
 import type { Commerce } from "~/interfaces/commerce";
-
-const { t } = useI18n();
 
 const newHeaderConcept = inject("newHeaderConcept");
 

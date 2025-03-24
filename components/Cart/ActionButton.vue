@@ -7,7 +7,7 @@
       nuxt
       :to="localeRoute({ name: 'commerce-order' })"
       :disabled="!cart.length"
-      >Continuar</v-btn
+      >{{ $t("Continue") }}</v-btn
     >
   </v-container>
 </template>

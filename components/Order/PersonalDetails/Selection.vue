@@ -1,13 +1,13 @@
 <template>
   <v-card>
-    <v-card-title class="text-h5"> Tus datos </v-card-title>
+    <v-card-title class="text-h5"> {{ $t("Your data") }} </v-card-title>
 
     <v-card-text>
       <v-form ref="form" v-model="valid" @submit.prevent="validate">
         <v-text-field
           v-model="name"
           :rules="nameRules"
-          label="Nombre y apellido"
+          :label="$t('Firstname and lastname')"
           required
         />
 
@@ -18,7 +18,7 @@
           :disabled="!valid"
           @click="validate"
         >
-          Confirmar
+          {{ $t("Submit") }}
         </v-btn>
       </v-form>
     </v-card-text>

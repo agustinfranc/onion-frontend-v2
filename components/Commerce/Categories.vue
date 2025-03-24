@@ -18,7 +18,7 @@
         density="compact"
         prepend-inner-icon="mdi-magnify"
         variant="solo-filled"
-        :label="t('Search')"
+        :label="$t('Search')"
       />
 
       <CommerceLinks v-if="!props.isTitleIntersecting" />
@@ -69,8 +69,6 @@
 
 <script setup lang="ts">
 import type { Rubro } from "~/interfaces/commerce";
-
-const { t } = useI18n();
 
 const newHeaderConcept = inject<Ref>("newHeaderConcept", ref());
 

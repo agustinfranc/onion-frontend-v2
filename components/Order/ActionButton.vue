@@ -6,7 +6,7 @@
       color="primary"
       :disabled="disabled"
       @click="submitOrder"
-      >Hacer pedido ${{ subtotalCalc }}</v-btn
+      >{{ $t("Submit order") }} ${{ subtotalCalc }}</v-btn
     >
   </v-container>
 </template>

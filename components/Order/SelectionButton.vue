@@ -4,7 +4,7 @@
     :disabled="disabled"
     :color="highlight ? 'light' : 'success'"
     @click="$emit('click')"
-    >{{ highlight ? "Cambiar" : highlightText }}</v-btn
+    >{{ highlight ? $t("Edit") : highlightText }}</v-btn
   >
 </template>
 

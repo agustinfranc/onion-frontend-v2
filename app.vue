@@ -62,7 +62,7 @@ import type { Order } from "./interfaces/order";
 
 const { setLocale, locale, getBrowserLocale } = useI18n();
 
-const browserLocale = getBrowserLocale();
+const browserLocale = getBrowserLocale() as "en" | "es" | "ar";
 
 if (browserLocale) {
   setLocale(browserLocale);

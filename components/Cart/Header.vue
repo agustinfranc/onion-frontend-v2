@@ -1,5 +1,5 @@
 <template>
-  <AppBar :to="localeRoute({ name: 'commerce' })" title="Mi carrito" />
+  <AppBar :to="localeRoute({ name: 'commerce' })" :title="$t('My cart')" />
 </template>
 
 <script lang="ts" setup>

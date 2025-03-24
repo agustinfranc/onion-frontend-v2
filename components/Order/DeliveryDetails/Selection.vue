@@ -1,27 +1,29 @@
 <template>
   <v-card>
-    <v-card-title class="text-h5"> Dirección de entrega </v-card-title>
+    <v-card-title class="text-h5">
+      {{ $t("Delivery address") }}
+    </v-card-title>
 
     <v-card-text>
       <v-form ref="form" v-model="valid">
         <v-text-field
           v-model="address"
           :rules="addressRules"
-          label="Dirección"
+          :label="$t('Address')"
           required
         />
 
         <v-text-field
           v-model="floor"
           :rules="floorRules"
-          label="Piso/Departamento"
+          :label="$t('Floor/Apartment')"
           required
         />
 
         <v-text-field
           v-model="description"
           :rules="descriptionRules"
-          label="Instrucción para la entrega"
+          :label="$t('Delivery instructions')"
           required
         />
 
@@ -32,7 +34,7 @@
           :disabled="!valid"
           @click="validate"
         >
-          Confirmar
+          {{ $t("Submit") }}
         </v-btn>
       </v-form>
     </v-card-text>

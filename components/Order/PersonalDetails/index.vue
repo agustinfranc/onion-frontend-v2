@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-title class="d-flex justify-space-between">
-        <span>Tus datos</span>
+        <span>{{ $t("Your data") }}</span>
 
         <OrderSelectionButton
           :highlight="!!order.client.name"

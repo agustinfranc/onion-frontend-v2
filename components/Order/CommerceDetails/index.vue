@@ -2,12 +2,12 @@
   <div>
     <v-card>
       <v-card-title class="d-flex justify-space-between">
-        <span>Sucursal</span>
+        <span>{{ $t("Branch") }}</span>
 
         <OrderSelectionButton
           v-if="commerce.branches?.length"
           :highlight="!!order.branch"
-          :highlight-text="'Seleccionar'"
+          :highlight-text="$t('Select')"
           @click="selectionDialog = true"
         />
       </v-card-title>

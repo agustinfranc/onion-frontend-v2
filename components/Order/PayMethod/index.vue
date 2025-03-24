@@ -1,11 +1,11 @@
 <template>
   <v-card>
     <v-card-title class="d-flex justify-space-between">
-      <span>Método de pago</span>
+      <span>{{ $t("Payment method") }}</span>
 
       <OrderSelectionButton
         :highlight="!!order.payMethod.name"
-        :highlight-text="'Seleccionar'"
+        :highlight-text="$t('Select')"
         :disabled="!order.branch"
         @click="selectionDialog = true"
       />

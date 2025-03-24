@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="text-h5"> Metodo de entrega </v-card-title>
+    <v-card-title class="text-h5"> {{ $t("Delivery method") }} </v-card-title>
 
     <v-card-text>
       <v-list
@@ -23,7 +23,7 @@
           v-if="withTimeOptions && selected"
           v-model="selectedTimeOption"
           class="mt-3 px-3"
-          label="Seleccionar franja horaria de retiro"
+          :label="$t('Select pick-up time slot')"
           :items="items"
         />
       </v-list>
@@ -35,7 +35,7 @@
         :disabled="isConfirmDisabled"
         @click="select"
       >
-        Confirmar
+        {{ $t("Submit") }}
       </v-btn>
     </v-card-text>
   </v-card>

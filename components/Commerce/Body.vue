@@ -9,9 +9,9 @@
         v-if="!newHeaderConcept && commerce.rubros"
         class="bg-background"
       >
-        <h3>{{ t("Categories") }}</h3>
+        <h3>{{ $t("Categories") }}</h3>
 
-        <v-divider class="mt-4"/>
+        <v-divider class="mt-4" />
       </v-container>
 
       <CommerceCategories :is-title-intersecting="isTitleIntersecting" />
@@ -24,7 +24,6 @@
 <script setup lang="ts">
 import type { Commerce } from "~/interfaces/commerce";
 
-const { t } = useI18n();
 const commerce = useState<Commerce>("commerce");
 
 const newHeaderConcept = ref(true);

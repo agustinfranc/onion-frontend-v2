@@ -10,14 +10,13 @@
           name: 'commerce-cart',
         })
       "
-      >{{ t("ir a mi carrito") }}</v-btn
+      >{{ $t("view my cart") }}</v-btn
     >
   </v-container>
 </template>
 
 <script lang="ts" setup>
 const localeRoute = useLocaleRoute();
-const { t } = useI18n();
 </script>
 
 <style scoped>

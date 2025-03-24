@@ -39,7 +39,7 @@
     <v-container class="overflow-y-auto">
       <v-card class="mb-4">
         <div class="d-flex justify-space-between align-center">
-          <v-card-title>{{ t("Unidades") }}</v-card-title>
+          <v-card-title>{{ $t("Units") }}</v-card-title>
 
           <div class="mr-2">
             <v-btn-toggle>
@@ -149,12 +149,12 @@
       </template>
 
       <v-card class="mb-auto">
-        <v-card-title>{{ t("¿Necesitas aclarar algo?") }}</v-card-title>
+        <v-card-title>{{ $t("Do you need to add a comment?") }}</v-card-title>
 
         <v-card-text>
           <v-textarea
             v-model="note"
-            :label="t('Notas al producto')"
+            :label="$t('Notes to the product')"
             counter
             rows="1"
           />
@@ -176,7 +176,6 @@ import type { CartProduct } from "~/interfaces/cart";
 import type { Commerce } from "~/interfaces/commerce";
 import type { Product, ProductOption } from "~/interfaces/product";
 
-const { t } = useI18n();
 const localeRoute = useLocaleRoute();
 
 const commerce = useState<Commerce>("commerce");

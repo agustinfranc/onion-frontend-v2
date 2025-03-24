@@ -7,14 +7,12 @@
       :disabled="disabled"
       :loading="loading"
       @click="emit('addToCart')"
-      >{{ t("Add to cart") }}</v-btn
+      >{{ $t("Add to cart") }}</v-btn
     >
   </v-container>
 </template>
 
 <script lang="ts" setup>
-const { t } = useI18n();
-
 defineProps({
   disabled: Boolean,
   loading: Boolean,

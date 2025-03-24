@@ -1,6 +1,8 @@
 <template>
   <v-card>
-    <v-card-title class="text-h5"> Elegí una sucursal </v-card-title>
+    <v-card-title class="text-h5">
+      {{ $t("Pick a branch") }}
+    </v-card-title>
 
     <v-card-text>
       <v-list
@@ -27,7 +29,7 @@
         :disabled="!selected"
         @click="select"
       >
-        Confirmar
+        {{ $t("Submit") }}
       </v-btn>
     </v-card-text>
   </v-card>
