@@ -1,7 +1,7 @@
 <template>
   <AppBar
     :to="localeRoute({ name: 'commerce-cart' })"
-    :title="$t('Mi pedido')"
+    :title="$t('My order')"
   />
 </template>
 

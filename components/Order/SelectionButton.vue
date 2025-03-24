@@ -9,12 +9,14 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n();
+
 defineProps({
   highlight: Boolean,
   disabled: Boolean,
   highlightText: {
     type: String,
-    default: "Ingresar",
+    default: t("Fill"),
   },
 });
 </script>

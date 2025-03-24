@@ -34,13 +34,13 @@ export default defineI18nConfig(() => ({
       "Do you need to add a comment?": "Do you need to add a comment?",
       "Do you need to add a comment to your order?":
         "Do you need to add a comment to your order?",
-      "Notes to your order": "Notas al pedido",
+      "Notes to your order": "Notes to your order",
       "Notes to the product": "Notes to the product",
-      "My cart": "Mi carrito",
-      "Submit order": "Hacer pedido",
+      "My cart": "My cart",
+      "Submit order": "Submit order",
       "My order": "My order",
       Edit: "Edit",
-      "Pick a branch": "Elegí una sucursal",
+      "Pick a branch": "Pick a branch",
       "Delivery details": "Delivery details",
       "Delivery address": "Delivery address",
       "Pick up at the store": "Pick up at the store",
@@ -51,6 +51,7 @@ export default defineI18nConfig(() => ({
       Address: "Address",
       "Floor/Apartment": "Floor/Apartment",
       "Delivery instructions": "Delivery instructions",
+      Fill: "Fill",
     },
     es: {
       Welcome: "Bienvenido",
@@ -100,6 +101,7 @@ export default defineI18nConfig(() => ({
       Address: "Dirección",
       "Floor/Apartment": "Piso/Departamento",
       "Delivery instructions": "Instrucción para la entrega",
+      Fill: "Ingresar",
     },
     ar: {
       Welcome: "مرحبًا",
