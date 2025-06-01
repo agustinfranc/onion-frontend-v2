@@ -4,19 +4,17 @@
     :disabled="disabled"
     :color="highlight ? 'light' : 'success'"
     @click="$emit('click')"
-    >{{ highlight ? $t("Edit") : highlightText }}</v-btn
+    >{{ highlight ? $t("Edit") : $t(highlightText) }}</v-btn
   >
 </template>
 
 <script lang="ts" setup>
-const { t } = useI18n();
-
-defineProps({
+const { highlightText } = defineProps({
   highlight: Boolean,
   disabled: Boolean,
   highlightText: {
     type: String,
-    default: t("Fill"),
+    default: "Fill",
   },
 });
 </script>
