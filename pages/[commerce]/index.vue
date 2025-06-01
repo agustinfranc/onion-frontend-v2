@@ -61,34 +61,28 @@ if (!commerce.value) {
       titleTemplate: `${commerceMetadata.value.fullname} | Onion`,
       meta: [
         {
-          hid: "description",
           name: "description",
           content: `${commerceMetadata.value.fullname} | ${t(
             "Access to our digital menu"
           )} | ${t("Developed by Onion")}`,
         },
         {
-          hid: "og:title",
           property: "og:title",
           content: `${commerceMetadata.value.fullname} | Onion`,
         },
         {
-          hid: "og:host",
           property: "og:host",
           content: `https://onion.ar/${commerceMetadata.value.name}`,
         },
         {
-          hid: "og:url",
           property: "og:url",
           content: `https://onion.ar/${commerceMetadata.value.name}`,
         },
         {
-          hid: "og:image",
           property: "og:image",
           content: commerceMetadata.value.cover_dirname,
         },
         {
-          hid: "og:description",
           property: "og:description",
           content: `${commerceMetadata.value.fullname} | ${t(
             "Access to our digital menu"
@@ -97,7 +91,6 @@ if (!commerce.value) {
       ],
       link: [
         {
-          hid: "canonical",
           rel: "canonical",
           href: `https://onion.ar/${commerceMetadata.value.name}`,
         },
