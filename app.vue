@@ -4,7 +4,7 @@
       <NuxtPage />
     </v-main>
 
-    <v-footer app class="w-100">
+    <v-footer v-if="commerce?.has_footer" app class="w-100">
       <div class="d-flex justify-space-between align-center w-100">
         <div class="text-left">
           <span>&copy; 2020 - </span>
@@ -87,6 +87,8 @@ const theme = useTheme();
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
 }
+
+const commerce = useState<Commerce>("commerce");
 
 // Initialize store
 useState("cart", () => []);
